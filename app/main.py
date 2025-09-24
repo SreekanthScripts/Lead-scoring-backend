@@ -1,3 +1,4 @@
+
 # 👉 main.py
 # This is the brain of the backend — all API routes live here.
 # FastAPI automatically generates interactive docs at /docs 🚀
@@ -9,12 +10,26 @@ from rules import rule_based_score
 from ai import ai_score
 
 # Create FastAPI app
-app = FastAPI(title="Lead Scoring Backend", description="Scores leads using rules + AI")
+app = FastAPI(
+    title="Lead Scoring Backend",
+    description="Scores leads using rules + AI",
+    version="1.0.0"
+)
 
 # In-memory storage (simple for assignment — normally we'd use DB)
 offers = {}
 leads_df = None
 results = []
+
+
+# 👇 Root route for health check + welcome message
+@app.get("/")
+def root():
+    return {
+        "message": "✅ Lead Scoring Backend is running!",
+        "docs_url": "/docs",
+        "endpoints": ["/offer", "/leads/upload", "/score", "/results"]
+    }
 
 
 @app.post("/offer")
@@ -61,9 +76,8 @@ def score_leads():
         # Rule-based part
         rule_score = rule_based_score(lead, offer)
 
-        # AI part
-        #intent, ai_points, reasoning = ai_score(lead, offer)
-        # Temporary AI skip for testing
+        # AI part (currently mocked for testing)
+        # intent, ai_points, reasoning = ai_score(lead, offer)
         intent = "Medium"
         ai_points = 30
         reasoning = "AI scoring skipped for testing."
