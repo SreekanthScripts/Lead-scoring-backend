@@ -138,7 +138,7 @@ Emma Singh,Marketing Manager,SalesFlow,B2B SaaS,San Francisco,"Marketing leader 
 
 ---
 
-##**Deployed Backend**
+## Deployed Backend
 - render is used for deployment
 - live API base URL : https://lead-scoring-backend-apis.onrender.com/docs
 
