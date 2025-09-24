@@ -4,9 +4,9 @@
 
 from fastapi import FastAPI, UploadFile, File
 import pandas as pd
-from app.models import Offer
-from app.rules import rule_based_score
-from app.ai import ai_score
+from models import Offer
+from rules import rule_based_score
+from ai import ai_score
 
 # Create FastAPI app
 app = FastAPI(title="Lead Scoring Backend", description="Scores leads using rules + AI")
