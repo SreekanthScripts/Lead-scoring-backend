@@ -138,7 +138,14 @@ Emma Singh,Marketing Manager,SalesFlow,B2B SaaS,San Francisco,"Marketing leader 
 
 ---
 
+##**Deployed Backend**
+- render is used for deployment
+- live API base URL : https://lead-scoring-backend-apis.onrender.com/docs
+
+ ---
+ 
 ## Notes
 - Always **upload the offer first**, then leads, then run `/score`.  
 - Data is stored **in memory**; restarting the server clears offers and leads.  
 - If OpenAI API key is missing, AI scoring will **fallback to default Medium intent**.
+  
